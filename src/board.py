@@ -2,7 +2,10 @@
 
 import os
 
-global columns, width
+global columns, width, x, y
+
+x, y = 0, 0
+board_x, board_y = [],[]
 columns, width = os.get_terminal_size()
 
 def board_check_size():

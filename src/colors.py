@@ -1,0 +1,22 @@
+from colorama import Fore, Back, Style
+from colorama import init as colorama_init
+
+colorama_init(autoreset=True)
+
+BLACK = Fore.BLACK
+BLUE = Fore.BLUE
+CYAN = Fore.CYAN
+GREEN = Fore.GREEN
+LIGHTBLACK = Fore.LIGHTBLACK_EX
+LIGHTBLUE = Fore.LIGHTBLUE_EX
+LIGHTCYAN = Fore.LIGHTCYAN_EX
+LIGHTGREEN = Fore.LIGHTGREEN_EX
+LIGHTMAGENTA = Fore.LIGHTMAGENTA_EX
+LIGHTRED = Fore.LIGHTRED_EX
+LIGHTWHITE = Fore.LIGHTWHITE_EX
+LIGHTYELLOW = Fore.LIGHTYELLOW_EX
+MAGENTA = Fore.MAGENTA
+RED = Fore.RED
+RESET = Fore.RESET
+WHITE = Fore.WHITE
+YELLOW = Fore.YELLOW
