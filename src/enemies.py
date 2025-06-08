@@ -10,5 +10,11 @@ class general_enemy:
 
         self.health = health
         self.damage = health
+
+    def hit(self, damage):
+        self.health -= damage
+        if (self.health <= 0):
+            del self
+
     def __str__(self):
         return f"Identification {self.name}, Number {self.number}, Location: X {self.x_position} Y {self.y_position}, Health {self.health}, Damage {self.damage}"

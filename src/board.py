@@ -1,11 +1,9 @@
-# Two dimensional board
-
 import os
 
 global columns, width, x, y
 
 x, y = 0, 0
-board_x, board_y = [],[]
+board_tiles = [0][0]
 columns, width = os.get_terminal_size()
 
 def board_check_size():
