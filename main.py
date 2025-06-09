@@ -1,3 +1,4 @@
+import sys
 from blessed import Terminal
 import re
 import math
@@ -5,18 +6,23 @@ from colorama import Fore, Back, Style
 from functools import reduce
 import blessed
 
+sys.path.insert(0, 'src/')
 from colors import *
 from character import *
-import save
-import board
-import enemies
+from save import *
+from board import *
+from enemies import *
 
 def testing(): # DEBUGGING
     print(RED + "Hello world")
     board.board_check_size()
     my_enemy = enemies.general_enemy("slime", 1, 5, 5, 100, 25)
-    my_enemy.hit(90)
-    print(my_enemy)
+    
+    # Two valid ways of doing damage, player_does_damage includes chance
+    #my_enemy.hit(90)
+    #my_enemy.health = player_does_damage(my_enemy.health)
+
+    print(my_enemy.health)
     save.save("TEXT")
 
 def invalid_choice():
@@ -26,12 +32,10 @@ def menu():
     print(BLUE + "Welcome to Termination Dungeon Adventure" + Style.RESET_ALL + "\n1: Play\n2: Exit")
     player_choice = input()
     
-    if (player_choice == "1"):
-        testing()
-    elif (player_choice == "2"):
-        exit()
-    else:
-        invalid_choice()
+    if (player_choice == "1"): testing()
+    elif (player_choice == "2"): exit()
+    else: invalid_choice()
+    terminal_clear()
 
 def main():
     run = True

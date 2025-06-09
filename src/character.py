@@ -1,11 +1,16 @@
 import random
 
 global player_health, player_damage
-player_health, player_damage = 0, 0
+player_health, player_damage = 10, 10
 
-def player_damage(damage: int) -> int:
+def player_takes_damage(damage: int) -> int:
     player_health -= damage
     return player_health
+
+def player_does_damage(enemy_health: int) -> int:
+    damage = player_damage * random.uniform(0.75, 1.25)
+    enemy_health -= int(damage)
+    return enemy_health
 
 def player_dodge(damage: int) -> int: # 25% Dodge Chance
     if (random.randint(1, 4) == 1):
