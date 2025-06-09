@@ -14,6 +14,7 @@ from board import *
 from enemies import *
 
 def testing(): # DEBUGGING
+    game_over()
     print(RED + "Hello world")
     board.board_check_size()
     my_enemy = enemies.general_enemy("slime", 1, 5, 5, 100, 25)
@@ -28,12 +29,21 @@ def testing(): # DEBUGGING
 def invalid_choice():
     print(RED + "Invalid Choice")
 
+def game_over():
+    terminal_clear()
+    print(RED +  "Game Over" + Style.RESET_ALL + "\n1: Play again\n2: Exit")
+    game_choice = input()
+    if game_choice == "1": menu()
+    elif game_choice == "2": exit()
+    else: menu()
+
 def menu():
+    terminal_clear()
     print(BLUE + "Welcome to Termination Dungeon Adventure" + Style.RESET_ALL + "\n1: Play\n2: Exit")
     player_choice = input()
     
-    if (player_choice == "1"): testing()
-    elif (player_choice == "2"): exit()
+    if player_choice == "1": testing()
+    elif player_choice == "2": exit()
     else: invalid_choice()
     terminal_clear()
 
