@@ -14,24 +14,24 @@ from board import *
 from enemies import *
 
 def testing(): # DEBUGGING
-    game_over()
+    #game_over()
     print(RED + "Hello world")
-    board.board_check_size()
-    my_enemy = enemies.general_enemy("slime", 1, 5, 5, 100, 25)
+    board_check_size()
+    my_enemy = general_enemy("slime", 1, 5, 5, 100, 25)
     
     # Two valid ways of doing damage, player_does_damage includes chance
     #my_enemy.hit(90)
     #my_enemy.health = player_does_damage(my_enemy.health)
 
     print(my_enemy.health)
-    save.save("TEXT")
+    save("TEXT")
 
 def invalid_choice():
     print(RED + "Invalid Choice")
 
 def game_over():
     terminal_clear()
-    print(RED +  "Game Over" + Style.RESET_ALL + "\n1: Play again\n2: Exit")
+    print(RED +  "Game Over" + RESET + "\n1: Play again\n2: Exit")
     game_choice = input()
     if game_choice == "1": menu()
     elif game_choice == "2": exit()
@@ -39,7 +39,7 @@ def game_over():
 
 def menu():
     terminal_clear()
-    print(BLUE + "Welcome to Termination Dungeon Adventure" + Style.RESET_ALL + "\n1: Play\n2: Exit")
+    print(BLUE + "Welcome to Termination Dungeon Adventure" + RESET + "\n1: Play\n2: Exit")
     player_choice = input()
     
     if player_choice == "1": testing()
