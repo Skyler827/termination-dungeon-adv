@@ -5,6 +5,7 @@ import math
 from colorama import Fore, Back, Style
 from functools import reduce
 import blessed
+import threading
 
 sys.path.insert(0, 'src/')
 from colors import *
@@ -12,6 +13,7 @@ from character import *
 from save import *
 from board import *
 from enemies import *
+from audio import *
 
 def testing(): # DEBUGGING
     #game_over()
@@ -39,6 +41,8 @@ def game_over():
 
 def menu():
     terminal_clear()
+    t1 = threading.Thread(target=play_sound, args=("~/programs/git/termination-dungeon-adv/assets/audio/main_menu.mp3",))
+    t1.start()
     print(BLUE + "Welcome to Termination Dungeon Adventure" + RESET + "\n1: Play\n2: Exit")
     player_choice = input()
     
