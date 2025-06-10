@@ -1,8 +1,10 @@
 import os
-
 import colors
+import json
+
 
 global columns, width, board_tiles, x, y
+
 
 x, y = 0, 0
 board_tiles = [0][0]
@@ -19,3 +21,4 @@ def board_check_size():
             time.sleep(1)
         else:
             break
+    
