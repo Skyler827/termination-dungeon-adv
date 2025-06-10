@@ -1,0 +1,29 @@
+{
+    "dimensions": {
+        "width":100,
+        "height":100
+    },
+    "background": [
+        {
+            "dimensions": {
+                "x":0,
+                "y":0,
+                "width":100,
+                "height":100
+            },
+            "color": "grey"
+        }
+    ],
+    "objects": [
+        {
+            "dimensions": {
+                "x":0,
+                "y":0,
+                "width":2,
+                "height":6
+            },
+            "color": "grey",
+            "outline": "black"
+        }
+    ]
+}

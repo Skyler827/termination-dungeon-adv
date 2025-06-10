@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+
 import sys
 from blessed import Terminal
 import re
@@ -6,6 +9,7 @@ from colorama import Fore, Back, Style
 from functools import reduce
 import blessed
 import threading
+import time
 
 sys.path.insert(0, 'src/')
 from colors import *
@@ -28,6 +32,9 @@ def testing(): # DEBUGGING
     print(my_enemy.health)
     save("TEXT")
 
+def load_game():
+    load_world()
+
 def invalid_choice():
     print(RED + "Invalid Choice")
 
@@ -46,9 +53,10 @@ def menu():
     print(BLUE + "Welcome to Termination Dungeon Adventure" + RESET + "\n1: Play\n2: Exit")
     player_choice = input()
     
-    if player_choice == "1": testing()
+    if player_choice == "1": load_game()
     elif player_choice == "2": exit()
     else: invalid_choice()
+    time.sleep(7)
     terminal_clear()
 
 def main():
