@@ -2,6 +2,7 @@ import os
 import colors
 import json
 
+# Check if terminal is big enough and other board functions inside this file
 
 global columns, width, board_tiles, x, y
 

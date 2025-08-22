@@ -19,19 +19,7 @@ from colors import *
 from enemies import *
 from save import *
 
-def testing(): # DEBUGGING
-    print(RED + "Hello world")
-    board_check_size()
-    my_enemy = general_enemy("slime", 1, 5, 5, 100, 25)
-
-    # Two valid ways of doing damage, player_does_damage includes chance
-    #my_enemy.hit(90)
-    #my_enemy.health = player_does_damage(my_enemy.health)
-
-    print(my_enemy.health)
-    save("TEXT")
-
-def load_game():
+def load_game(): #TODO add more later to this func
     load_world()
 
 def invalid_choice():
@@ -39,7 +27,7 @@ def invalid_choice():
 
 def game_over():
     terminal_clear()
-    print(RED +  "Game Over" + RESET + "\n1: Play again\n2: Exit")
+    print(RED + "Game Over" + RESET + "\n1: Play again\n2: Exit")
     game_choice = input()
     if game_choice == "1": menu()
     elif game_choice == "2": exit()
@@ -47,24 +35,23 @@ def game_over():
 
 def menu():
     terminal_clear()
+    board_check_size()
 
-    t1 = threading.Thread(target=play_sound, args=("~/programs/git/termination-dungeon-adv/assets/audio/main_menu.mp3",))
+    t1 = threading.Thread(target=play_sound, args=("assets/audio/main_menu.mp3",))
     t1.start()
 
     print(BLUE + "Welcome to Termination Dungeon Adventure" + RESET + "\n1: Play\n2: Exit")
     player_choice = input()
     
-    if player_choice == "1": #load_game():
-        t2 = threading.Thread(target=load_game, args=(),)
+    if player_choice == "1":
+        load_game()
     elif player_choice == "2": exit()
     else: invalid_choice()
-    #time.sleep(1)
     terminal_clear()
 
-    t2.start()
 
 def main():
-    run = True
+    run: bool = True
     while run:
         menu()
 
